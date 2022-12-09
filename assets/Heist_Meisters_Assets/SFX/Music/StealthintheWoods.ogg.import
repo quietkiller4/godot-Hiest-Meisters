@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/StealthintheWoods.ogg-7ee2604e486f700c8d56ee38473d6478.oggstr"
+
+[deps]
+
+source_file="res://assets/Heist_Meisters_Assets/SFX/Music/StealthintheWoods.ogg"
+dest_files=[ "res://.import/StealthintheWoods.ogg-7ee2604e486f700c8d56ee38473d6478.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Interface/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/Heist_Meisters_Assets/GFX/Interface/PNG/metalPanel_blue.png" type="Texture" id=2]
+[ext_resource path="res://assets/Heist_Meisters_Assets/GFX/Interface/Fonts/kenvector_future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Levels/Lobby.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="Lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="NinePatchRect" parent="CenterContainer"]
+margin_left = 500.0
+margin_top = 279.0
+margin_right = 524.0
+margin_bottom = 321.0
+texture = ExtResource( 2 )
+patch_margin_left = 12
+patch_margin_top = 40
+patch_margin_right = 12
+patch_margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 30.0
+margin_right = -12.0
+margin_bottom = -12.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="CenterContainer/Background/VBoxContainer"]
+margin_right = 308.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Welcome To"
+align = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/Background/VBoxContainer"]
+margin_top = 47.0
+margin_right = 308.0
+margin_bottom = 158.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Heist
+Meisters"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Background/VBoxContainer"]
+margin_top = 178.0
+margin_right = 308.0
+margin_bottom = 246.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/Background/VBoxContainer/CenterContainer"]
+margin_left = 41.0
+margin_right = 266.0
+margin_bottom = 68.0
+columns = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+
+[node name="Label" type="Label" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_left = 36.0
+margin_top = 2.0
+margin_right = 225.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Start Mission"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+
+[node name="Label2" type="Label" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+margin_left = 36.0
+margin_top = 38.0
+margin_right = 225.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quit Game"
+
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
